@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Upload
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+
+    <div class="container">
+      <div class="form ion-text-center">
+        <form #form="ngForm" (ngSubmit)="login(form)">
+        <h2>Fill Details</h2>
+
+        
+          <ion-button color="dark" (click)="takePicture()">
+            <ion-icon slot="icon-only" name="camera-outline"></ion-icon>
+          </ion-button>
+        
+          <ion-img *ngIf="photo" [src]="photo"></ion-img>
+        
+        <ion-item lines='none'>
+          <ion-textarea placeholder="Describe Here">
+          </ion-textarea>
+        </ion-item>
+    
+        <ion-button expand="block" fill="solid" mode="ios" class="login-btn" (click)="submit()">Submit</ion-button>
+
+          
+        
+      </form>
+      </div>
+    </div>
+
+  
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-searchbar placeholder="Search"></ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="scan-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-grid *ngIf="whether" transparent>
+    <h1 class="ion-text-center"><b>Nagpur</b></h1>
+    <ion-row>
+      <ion-col col-12 class="ion-text-center">
+        <h1>{{whether.current.temp_c}}&deg;</h1>
+        <p>{{whether.current.condition.text}} <img src="{{whether.current.condition.icon}}" height="40" width="40" /></p>
+      </ion-col>
+    </ion-row>
+
+    <h2>Wind</h2>
+    <ion-row>
+      <ion-col col-3>
+        {{whether.current.wind_mph}} MPH
+      </ion-col>
+      <ion-col col-3>
+        {{whether.current.wind_kph}} KPH
+      </ion-col>
+      <ion-col col-3>
+        {{whether.current.wind_degree}}&deg;
+      </ion-col>
+      <ion-col col-3>
+        {{whether.current.wind_dir}}
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

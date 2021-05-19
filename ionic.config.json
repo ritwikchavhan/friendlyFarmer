@@ -1,0 +1,7 @@
+{
+  "name": "friendly-farmer",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

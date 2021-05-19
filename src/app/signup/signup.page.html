@@ -1,0 +1,44 @@
+<ion-content >
+  <div class="ion-text-center">
+    <img class="img1" src="../../assets/img/login.png">
+    <h1>Friendly Farmer</h1>
+  </div>
+  
+    <div class="container">
+      <div class="form ion-text-center">
+        <form #form="ngForm" (ngSubmit)="register(form.value)">
+        <h2>Create Account </h2>
+
+        <ion-item lines='none'>
+          <ion-input name="full_name" ngModel type="text" placeholder='Full Name'></ion-input>
+        </ion-item>
+        
+        <ion-item lines='none'>
+          <ion-input name="mobile_no" ngModel type="number" placeholder='Mobile No.'></ion-input>
+        </ion-item>
+    
+        <ion-item lines='none'>
+          <ion-input placeholder='Password' [type]="passwordType" clearOnEdit="false" name="password" ngModel></ion-input>
+          <ion-icon item-end [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
+        </ion-item>
+
+        <ion-item lines='none'>
+          <ion-input placeholder='Confirm Password'  clearOnEdit="false" name="c_password" ngModel></ion-input>
+        </ion-item>
+        <ion-button type="submit" expand="block" fill="solid" mode="ios" class="login-btn">Sign Up</ion-button>
+        <br>
+        <div class="signup-footer">
+          <p>
+            Already have an account?
+          </p>
+
+          <ion-button fill="clear" class="signup-login-btn" routerLink="/login">
+            Login<ion-icon name="arrow-forward-sharp"></ion-icon>
+          </ion-button>
+        </div>
+          
+        
+      </form>
+      </div>
+    </div>
+  </ion-content>
